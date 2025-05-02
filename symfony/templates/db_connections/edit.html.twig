@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit DbConnections{% endblock %}
+
+{% block body %}
+    <h1>Edit DbConnections</h1>
+
+    {{ include('db_connections/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_db_connections_index') }}">back to list</a>
+
+    {{ include('db_connections/_delete_form.html.twig') }}
+{% endblock %}

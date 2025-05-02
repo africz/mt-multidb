@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DbConnections{% endblock %}
+
+{% block body %}
+    <h1>DbConnections</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ db_connection.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ db_connection.name }}</td>
+            </tr>
+            <tr>
+                <th>Host</th>
+                <td>{{ db_connection.host }}</td>
+            </tr>
+            <tr>
+                <th>Port</th>
+                <td>{{ db_connection.port }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ db_connection.username }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ db_connection.password }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_db_connections_index') }}">back to list</a>
+
+    <a href="{{ path('app_db_connections_edit', {'id': db_connection.id}) }}">edit</a>
+
+    {{ include('db_connections/_delete_form.html.twig') }}
+{% endblock %}

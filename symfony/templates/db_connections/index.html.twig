@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DbConnections index{% endblock %}
+
+{% block body %}
+    <h1>DbConnections index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Host</th>
+                <th>Port</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for db_connection in db_connections %}
+            <tr>
+                <td>{{ db_connection.id }}</td>
+                <td>{{ db_connection.name }}</td>
+                <td>{{ db_connection.host }}</td>
+                <td>{{ db_connection.port }}</td>
+                <td>{{ db_connection.username }}</td>
+                <td>{{ db_connection.password }}</td>
+                <td>
+                    <a href="{{ path('app_db_connections_show', {'id': db_connection.id}) }}">show</a>
+                    <a href="{{ path('app_db_connections_edit', {'id': db_connection.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_db_connections_new') }}">Create new</a>
+{% endblock %}
