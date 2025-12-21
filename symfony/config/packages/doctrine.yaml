@@ -18,8 +18,8 @@ doctrine:
                     enable_http_compression: 1
                     max_execution_time: 60
                     sslCA: '/usr/local/share/ca-certificates/Yandex/YandexInternalRootCA.crt'
-            # mongodb:
-            #     url: '%env(resolve:DATABASE_URL_MONGODB)%' # mongodb    
+            mongodb:
+                url: '%env(resolve:DATABASE_URL_MONGODB)%' # mongodb    
         default_connection: mysql
 
     orm:
@@ -52,15 +52,15 @@ doctrine:
                         dir: '%kernel.project_dir%/src/Entity'
                         prefix: 'App\Entity'
                         alias: App
-            # mongodb:
-            #     connection: mongodb
-            #     mappings:
-            #         App:
-            #             is_bundle: false
-            #             type: attribute
-            #             dir: '%kernel.project_dir%/src/Entity'
-            #             prefix: 'App\Entity'
-            #             alias: App
+            mongodb:
+                connection: mongodb
+                mappings:
+                    App:
+                        is_bundle: false
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Entity'
+                        prefix: 'App\Entity'
+                        alias: App
         
 
 when@test:

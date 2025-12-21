@@ -10,6 +10,7 @@
         "doctrine/dbal": "^3",
         "doctrine/doctrine-bundle": "^2.14",
         "doctrine/doctrine-migrations-bundle": "^3.4",
+        "doctrine/mongodb-odm": "^2.11",
         "doctrine/orm": "^3.3",
         "friendsofdoctrine/dbal-clickhouse": "*",
         "symfony/console": "7.2.*",
