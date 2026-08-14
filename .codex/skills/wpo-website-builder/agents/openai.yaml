@@ -1,0 +1,4 @@
+interface:
+  display_name: "WPO Website Builder"
+  short_description: "Build editable WPO and WPBakery websites"
+  default_prompt: "Use $wpo-website-builder to build or redesign this WordPress page with editable WPO/WPBakery components and verify visual fidelity."
